@@ -3,7 +3,8 @@ from BrainFuckCompiler import Compiler
 DEBUG = True
 
 def main():
-    with open("code.txt", "r") as f:
+    bfcode = str(input("Enter file you want to compiler: "))
+    with open(f"{bfcode}.txt", "r") as f:
         code = f.read()
     
         comp = Compiler(code)
