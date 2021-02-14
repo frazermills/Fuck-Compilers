@@ -1,26 +1,22 @@
 # Brain Fuck Compiler:
 
-<!-- TABLE OF CONTENTS -->
-<summary><h2 style="display: inline-block">Table of Contents</h2></summary>
-<details open="open">
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-  </ol>
-</details>
+### Introduction
+This project will become a compiler that compiles brainfuck code. 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
+### About The Project
 
-This project was created as a way to compile my brainfuck code for school project. Why brainfuck? you may ask, well my Computer Science teacher wrote "implement this in the language of your choice", and hence I used brainfuck.
+This project was created so that I compile my brainfuck code for a school project. The other reason I am building this project is to learn more about the brainfuck language. Why use brainfuck for a school project? you may ask, well my Computer Science teacher said that we could "implement this in the language of your choice", and hence I used brainfuck.
 
 ### Built With
-
 * python 3
 * brainfuck
+
+#### Current features:
+* Can read and process .bf files
+* Can fully interpret .bf files that do not contain inputs from the user
+
+#### Project's future features:
+* Add the capabilities of accepting inputs from the user
+* Refactoring code to improve efficiency
+* Adding proper comments to make code more readble
+* GUI interface 
