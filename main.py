@@ -1,8 +1,7 @@
 from BrainFuckCompiler import Compiler
 
-DEBUG = True
-
 def main():
+    DEBUG = str(input("Enable debug mode? (True/False) "))
     bfcode = str(input("Enter file you want to compiler: "))
     mode = str(input("Enter mode: "))
     num_of_inputs = int(input("How many inputs are there? "))
@@ -10,7 +9,7 @@ def main():
 
     if DEBUG: print(bfcode, mode, inputs)
 
-    with open(f"{bfcode}.txt", "r") as f:
+    with open(f"{bfcode}.bf", "r") as f:
         code = f.read()
 
         comp = Compiler(code, inputs, mode)
