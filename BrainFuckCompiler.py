@@ -1,7 +1,7 @@
-DEBUG = False
+DEBUG = True
 
 class Compiler:
-    def __init__(self, bfcode, inputs, mode):
+    def __init__(self, bfcode, mode, inputs):
         self.code = bfcode
         self.mode = mode
         self.inputs = inputs
@@ -9,8 +9,8 @@ class Compiler:
     def evaluate(self):
         if DEBUG: print(self.code)
 
-        arr = [0]
-        input_index = int(len(self.inputs) - 1)     # index of the inputs
+        arr = [0 for i in range(50)]
+        input_index = int(0)                        # index of the inputs
         p = 0                                       # pointer location
         arr_index = 0                               # index of array
         while_loop = []
@@ -47,7 +47,13 @@ class Compiler:
                     print(arr[arr_index])
 
             elif self.code[p] == ",":
-                arr[arr_index] = self.inputs[input_index]
+                try:
+                    print("before", arr[arr_index], self.inputs[input_index])
+                    arr[arr_index] = self.inputs[input_index]
+                    print("after", arr[arr_index], self.inputs[input_index])
+                    input_index += 1
+                except IndexError:
+                    print("something went wrong")
 
             elif self.code[p] == "[":
                 while_loop.append(p)
@@ -58,4 +64,6 @@ class Compiler:
                 else:
                     del while_loop[-1]
             p += 1
+
+            if not DEBUG: print(arr)
             
