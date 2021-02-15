@@ -1,25 +1,23 @@
-# author: Frazer Mills
-# project title: Python-BrainFuck-Compiler
-# file title: main.py
-# date: 15.2.21
-
-
 from BrainFuckCompiler import Compiler
 
 def main():
     DEBUG = str(input("Enable debug mode? (True/False) "))
     bfcode = str(input("Enter file you want to compiler: "))
     mode = str(input("Enter mode: "))
-    num_of_inputs = int(input("How many inputs are there? "))
-    inputs = [input("Input next number: ") for i in range(num_of_inputs)]
-
-    if DEBUG: print(bfcode, mode, inputs)
+    input_file = str(input("Enter inputs file: "))
 
     with open(f"{bfcode}.bf", "r") as f:
         code = f.read()
 
-        comp = Compiler(code, inputs, mode)
-        compiled_code = comp.evaluate()
+    with open(f"{input_file}.txt", "r") as f:
+        file = f.read()
+        inputs = list(file.split(" "))
+        
+
+    if DEBUG: print(bfcode, mode, inputs, code)
+
+    comp = Compiler(code, mode, inputs)
+    compiled_code = comp.evaluate()
 
 if __name__ == "__main__":
     main()
