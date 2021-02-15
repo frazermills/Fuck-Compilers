@@ -1,3 +1,9 @@
+# author: Frazer Mills
+# project title: Python-BrainFuck-Compiler
+# file title: main.py
+# date: 15.2.21
+
+
 from BrainFuckCompiler import Compiler
 
 def main():
