@@ -13,7 +13,8 @@ def main():
         file = f.read()
         str_inputs = list(file.split(" "))
         int_inputs = [int(i) for i in str_inputs]
-        if DEBUG: print(type(int_inputs[0]))
+        int_inputs.append("end")
+        if DEBUG: print(int_inputs)
         
 
     if DEBUG: print(bfcode, mode, int_inputs, code)
