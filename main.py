@@ -11,12 +11,14 @@ def main():
 
     with open(f"{input_file}.txt", "r") as f:
         file = f.read()
-        inputs = list(file.split(" "))
+        str_inputs = list(file.split(" "))
+        int_inputs = [int(i) for i in str_inputs]
+        if DEBUG: print(type(int_inputs[0]))
         
 
-    if DEBUG: print(bfcode, mode, inputs, code)
+    if DEBUG: print(bfcode, mode, int_inputs, code)
 
-    comp = Compiler(code, mode, inputs)
+    comp = Compiler(code, mode, int_inputs)
     compiled_code = comp.evaluate()
 
 if __name__ == "__main__":

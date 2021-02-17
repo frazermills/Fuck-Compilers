@@ -7,7 +7,6 @@ class Compiler:
         self.inputs = inputs
 
     def evaluate(self):
-        if DEBUG: print(self.code)
 
         arr = [0 for i in range(50)]
         input_index = int(0)                        # index of the inputs
@@ -47,13 +46,9 @@ class Compiler:
                     print(arr[arr_index])
 
             elif self.code[p] == ",":
-                try:
-                    print("before", arr[arr_index], self.inputs[input_index])
-                    arr[arr_index] = self.inputs[input_index]
-                    print("after", arr[arr_index], self.inputs[input_index])
-                    input_index += 1
-                except IndexError:
-                    print("something went wrong")
+                num = self.inputs[input_index] + 48
+                arr[arr_index] = num
+                input_index += 1
 
             elif self.code[p] == "[":
                 while_loop.append(p)
@@ -64,6 +59,4 @@ class Compiler:
                 else:
                     del while_loop[-1]
             p += 1
-
-            if not DEBUG: print(arr)
             
